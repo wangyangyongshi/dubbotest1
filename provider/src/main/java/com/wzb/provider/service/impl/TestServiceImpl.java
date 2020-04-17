@@ -2,7 +2,7 @@ package com.wzb.provider.service.impl;
 
 import com.wzb.service.TestService;
 import org.apache.dubbo.config.annotation.Service;
-
+import org.springframework.stereotype.Component;
 
 
 /**
@@ -11,7 +11,8 @@ import org.apache.dubbo.config.annotation.Service;
  * @description:
  * 模拟数据库事务实现
  */
-@Service(version = "1.0.0",interfaceClass = TestService.class)
+//@Component("testService")
+@Service(version = "1.0.0", interfaceClass = TestService.class, timeout = 1200000)
 //@Service(version = "1.0.0")
 public class TestServiceImpl implements TestService {
     @Override

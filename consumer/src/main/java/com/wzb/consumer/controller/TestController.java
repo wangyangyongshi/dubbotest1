@@ -20,31 +20,31 @@ import javax.annotation.Resource;
 public class TestController {
 
 //    @Resource
-//    private TestService testServiceImpl;
-    @Reference(version = "1.0.0")
-    private TestService testServiceImpl;
+//    private TestService testService;
+    @Reference(url = "dubbo://localhost:20880",version = "1.0.0",timeout = 6000)
+    private TestService TestServiceImpl;
 
     @RequestMapping("/ins")
-    public String ins(){
-        testServiceImpl.ins();
+    public String ins() {
+        TestServiceImpl.ins();
         return "ins";
     }
 
     @RequestMapping("/del")
     public String del(){
-        testServiceImpl.del();
+        TestServiceImpl.del();
         return "del";
     }
 
     @RequestMapping("/upd")
     public String upd(){
-        testServiceImpl.upd();
+        TestServiceImpl.upd();
         return "upd";
     }
 
     @RequestMapping("/sel")
     public String sel(){
-        testServiceImpl.sel();
+        TestServiceImpl.sel();
         return "sel";
     }
 }
